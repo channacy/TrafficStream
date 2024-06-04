@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mapbox GL JS Single Polygon Example</title>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.js"></script>
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <nav>
+      <a href="/">
+        <div class="header">
+          <img src="img/cam_lab.png" alt="Drexel University Logo" class="drexel" />
+          <h1 class="navbar-title">Traffic Dashboard</h1>
+        </div>
+      </a>
+      <div class="navbar-content">
+          <ul>
+            <li><a href="index.html" id="aboutLink">About</a></li>
+            <li>
+              <a href="semi_real_time.html" id="realTimeLink">Real-Time Data</a>
+            </li>
+            <li>
+              <a href="historical.html" id="historicalDataLink">Historical Data</a>
+            </li>
+          </ul>
+      </div>
+      <!-- Divider between navbar and map -->
+      <div class="divider"></div>
+    </nav>
+
+    <div id="map"></div>
+
+    <!-- Date Container -->
+    <div class="date-container">
+      <div class="dateForRealTime" id="currentDate"></div>
+      <!-- You can add more date elements here if needed -->
+    </div>
+
+    <script>
+      mapboxgl.accessToken =
+        "pk.eyJ1Ijoiam00NjQ2IiwiYSI6ImNscTYyMzRhNDByYTEyam9oOWw3OXhmc3kifQ.MtsHFT_LpuS0mwGzqing1g";
+      var map = new mapboxgl.Map({
+        container: "map",
+        style: "mapbox://styles/mapbox/dark-v10",
+        center: [-76.6122, 39.2904],
+        zoom: 10,
+      });
+
+      map.addControl(new mapboxgl.NavigationControl(), "top-right");
+    </script>
+    <script src="scripts/semi_real_time_for_its_page.js"></script>
+  </body>
+</html>

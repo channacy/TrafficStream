@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="./tailslim.css" rel="stylesheet">
+  </head>
+  <body class="min-h-screen bg-background font-sans antialiased m-4">
+    <div class="relative flex min-h-screen flex-col">
+      <header
+        class="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <div
+          class="container flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0">
+          <div class="flex gap-6 md:gap-10">
+            <a href="/" class="flex items-center space-x-2">
+              <span class="inline-block font-bold">Home</span>
+            </a>
+            <a href="semi_real_time.html" class="flex items-center space-x-2">
+              <span class="inline-block">Real-Time Data</span>
+            </a>
+            <a href="historical.html" class="flex items-center space-x-2">
+              <span class="inline-block">Historical</span>
+            </a>
+          </div>
+          <div class="flex items-center justify-end space-x-4">
+            <nav class="flex items-center space-x-1">
+              <div class="logo flex">
+                <a
+                  href="https://research.coe.drexel.edu/caee/camlab/index.html"
+                  target="_blank"
+                  rel="noreferrer"
+                  class={buttonVariants({ variant: 'ghost' })}
+                  >
+                    <div class="lab-name flex items-center space-x-1">
+                      <img src="/img/cam_lab.png" width="30" height="30"/>
+                      <strong>C</strong>onnected &
+                      <strong>A</strong>utomated
+                      <strong>M</strong>obility Lab
+                    </div>
+                  </a>
+              </div>
+              <!-- <ThemeToggle /> -->
+            </nav>
+          </div>
+        </div>
+      </header>
+      <main class="flex-auto">
+        <section class="container grid items-center gap-6 pb-8 pt-6 md:py-10">
+          <div class="flex max-w-[980px] flex-col items-start gap-2">
+            <h1 class="text-3xl font-extrabold leading-tight tracking-tighter md:text-4xl">
+              Traffic Stream <br class="hidden sm:inline" />
+              Collecting Daily Traffic Data For Philadelphia and Baltimore
+            </h1>
+            <p class="max-w-[700px] text-lg text-muted-foreground">
+              Traffic refers to the movement of vehicles and pedestrians on roads, streets, and highways. It is a vital aspect of transportation infrastructure and plays a significant role in the functioning of cities and communities. Understanding traffic patterns and trends is essential for urban planning, traffic management, and improving overall transportation efficiency.
+            </p>
+            <p class="max-w-[700px] text-lg text-muted-foreground">
+              Traffic data, including real-time and historical information, is collected through various methods such as traffic cameras, sensors, and GPS devices. Analyzing this data helps transportation authorities make informed decisions regarding traffic flow, road maintenance, and infrastructure development.
+            </p>
+            <p class="max-w-[700px] text-lg text-muted-foreground">
+              The purpose of this Traffic Dashboard is to provide users with access to both real-time and historical traffic data. By visualizing this information, users can gain insights into traffic conditions, identify patterns, and make informed decisions about their travel routes and timing.
+            </p>
+            <button class="bg-black hover:bg-gray-800 text-white font-bold py-2 px-4 rounded">
+              View Real-Time Analytics
+            </button>
+          </div>
+        </section>
+      </main>
+      <footer class="border-t md:py-0">
+        <div
+          class="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
+          <p
+            class="text-sm leading-loose text-muted-foreground md:text-left">
+            Sponsored by the <a href="https://www.nsf.gov/">National Science Foundation</a>
+          </p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
+

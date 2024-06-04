@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mapbox GL JS Single Polygon Example</title>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.js"></script>
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <link href="./tailslim.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="min-h-screen bg-background font-sans antialiased">
+    <div class="relative flex min-h-screen flex-col">
+      <header
+        class="sticky top-0 z-50 w-4/6 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <div
+          class="container flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0">
+          <div class="flex gap-6 md:gap-10 m-4">
+            <a href="/" class="flex items-center space-x-2">
+              <span class="inline-block font-bold">Home</span>
+            </a>
+            <a href="semi_real_time.html" class="flex items-center space-x-2">
+              <span class="inline-block">Real-Time Data</span>
+            </a>
+            <a href="historical.html" class="flex items-center space-x-2">
+              <span class="inline-block">Historical</span>
+            </a>
+          </div>
+          <div class="flex items-center justify-end space-x-4">
+            <nav class="flex items-center space-x-1">
+              <div class="logo flex">
+                <a
+                  href="https://research.coe.drexel.edu/caee/camlab/index.html"
+                  target="_blank"
+                  rel="noreferrer"
+                  class={buttonVariants({ variant: 'ghost' })}
+                  >
+                    <div class="lab-name flex items-center space-x-1">
+                      <img src="/img/cam_lab.png" width="30" height="30"/>
+                      <strong>C</strong>onnected &
+                      <strong>A</strong>utomated
+                      <strong>M</strong>obility Lab
+                    </div>
+                  </a>
+              </div>
+              <!-- <ThemeToggle /> -->
+            </nav>
+          </div>
+        </div>
+      </header>
+        <div id="map" class="map-container">
+          <div class="sidebar" id="sidebar">
+            <div class="charts-container">
+              <canvas id="distributionChart1"></canvas>
+              <canvas id="distributionChart2"></canvas>
+            </div>
+          </div>
+        </div>
+    
+        <!-- ☰ -->
+        <div class="toggle-button" onclick="toggleSidebar()">
+          <span class="button-box">
+            <span class="arrow-icon"></span>
+          </span>
+        </div>
+    
+        <!-- <ul id="geojson-list"></ul> -->
+    
+        <div id="dropdown-container">
+          <!-- Year Dropdown -->
+          <select class="dropdown year">
+            <!-- Options dynamically populated by JavaScript -->
+          </select>
+    
+          <!-- Month Dropdown -->
+          <select class="dropdown month">
+            <!-- Options dynamically populated by JavaScript -->
+          </select>
+    
+          <!-- Date Dropdown -->
+          <select class="dropdown date">
+            <!-- Options dynamically populated by JavaScript -->
+          </select>
+        </div>
+    
+        <!-- <label for="time-slider" class="slider-label">Time of Day</label> -->
+    
+        <!-- Add this label directly to the map -->
+        <div id="time-slider-label" class="map-overlay">
+          <h2>Time of Day</h2>
+        </div>
+    
+        <div id="slider-container">
+          <button id="stop-auto-move-btn">Stop Auto Move</button>
+          <!-- Stop Auto Move Button -->
+          <input
+            type="range"
+            id="time-slider"
+            min="0"
+            max="7"
+            step="1"
+            value="0"
+            id="custom-slider"
+          />
+          <div class="time-slot-labels" id="time-slot-labels"></div>
+        </div>
+      <script>
+        mapboxgl.accessToken =
+          "pk.eyJ1Ijoiam00NjQ2IiwiYSI6ImNscTYyMzRhNDByYTEyam9oOWw3OXhmc3kifQ.MtsHFT_LpuS0mwGzqing1g";
+        var map = new mapboxgl.Map({
+          container: "map",
+          style: "mapbox://styles/mapbox/dark-v10",
+          center: [-76.6122, 39.2904],
+          zoom: 10,
+        });
+  
+        map.addControl(new mapboxgl.NavigationControl(), "top-right");
+      </script>
+      <!-- <script src="scripts/semi_real_time.js"></script> -->
+      <script src="scripts/date_drop_down.js"></script>
+  
+      <script>
+        function toggleSidebar() {
+          var sidebar = document.getElementById("sidebar");
+          sidebar.classList.toggle("collapsed");
+          var button = document.querySelector(".toggle-button");
+  
+          if (sidebar.classList.contains("collapsed")) {
+            sidebar.style.width = "0"; // Collapse the sidebar
+  
+            // Move the button to the right edge of the map
+          } else {
+            sidebar.style.width = "500px"; // Expand the sidebar
+            // Move the button to the right edge of the map
+          }
+        }
+      </script>
+    </div>
+  </body>
+</html>
+

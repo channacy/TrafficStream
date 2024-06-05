@@ -17,13 +17,14 @@ html {
 #slider-container {
   position: absolute;
   bottom: 60px;
-  left: 65%;
+  left: 75%;
   transform: translateX(-50%);
-  width: 60%;
+  width: 40%;
   z-index: 1;
   background: rgba(255, 255, 255, 0); 
   padding: 10px;
   border-radius: 5px;
+  font-size: 16px;
 }
 
 #time-slider {
@@ -40,7 +41,7 @@ html {
 
 .time-slot-label {
   position: relative;
-  font-size: 12px;
+  font-size: 16px;
   text-align: center;
 }
 
@@ -53,11 +54,10 @@ html {
 #dropdown-container {
   position: absolute;
   bottom: 180px;
-  right: 70px;
+  right: 75px;
   display: flex;
-  align-items: center;
-  width: 250px;
-  height: 20px;
+  width: 30%;
+  opacity: 0.8;
 }
 
 .slider-label {
@@ -79,16 +79,17 @@ html {
   padding: 5px;
   border-radius: 5px;
   z-index: 1;
-  width: 130px;
   text-align: center;
   opacity: 0.8;
+  width: 10%;
 }
 
 .map-overlay h2 {
-font-size: 14px;
-margin: 0 0 5px;
-text-align: center;
-line-height: 1;
+  font-size: 16px;
+  margin: 0 0 5px;
+  text-align: center;
+  line-height: 1;
+  display: inline-block;
 }
 
 .dropdown {
@@ -97,7 +98,7 @@ background-color: #fff;
 border: 1px solid #ccc;
 border-radius: 4px;
 padding: 8px 12px;
-font-size: 14px;
+font-size: 16px;
 color: #333;
 cursor: pointer;
 width: 100%;
@@ -306,23 +307,27 @@ nav ul li a {
   
   .sidebar {
     position: relative;
-    width: 40%;
+    width: 30%;
     background-color: #f0f0f0;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
     z-index: 1;
-    overflow: hidden; /* Add this line */
+    overflow: hidden; 
     border: 2px solid purple;
     display: flex;
+    height: 50%;
+    max-width: 40%;
+    max-height: 60%;
   }
   
   .map-container {
     flex: 1;
-    height: 100vh;
+    height: 45%;
+    max-height: 60%;
     transition: margin-left 0.3s ease;
   /* margin-left: 0;  */
-  overflow: hidden; 
+    overflow: hidden; 
 
   }
   

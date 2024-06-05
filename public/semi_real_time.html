@@ -12,37 +12,56 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
 
-  <body>
-    <nav>
-      <a href="/">
-        <div class="header">
-          <img src="img/cam_lab.png" alt="Drexel University Logo" class="drexel" />
-          <h1 class="navbar-title">Traffic Dashboard</h1>
+  <body class="min-h-screen bg-background font-sans antialiased m-4">
+    <div class="relative flex min-h-screen flex-col">
+      <header
+        class="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <div
+          class="container flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0">
+          <div class="flex gap-6 md:gap-10">
+            <a href="/" class="flex items-center space-x-2">
+              <span class="inline-block font-bold">Home</span>
+            </a>
+            <a href="semi_real_time.html" class="flex items-center space-x-2">
+              <span class="inline-block">Real-Time Data</span>
+            </a>
+            <a href="historical.html" class="flex items-center space-x-2">
+              <span class="inline-block">Historical</span>
+            </a>
+          </div>
+          <div class="flex items-center justify-end space-x-4">
+            <nav class="flex items-center space-x-1">
+              <div class="logo flex">
+                <a
+                  href="https://research.coe.drexel.edu/caee/camlab/index.html"
+                  target="_blank"
+                  rel="noreferrer"
+                  class={buttonVariants({ variant: 'ghost' })}
+                  >
+                    <div class="lab-name flex items-center space-x-1">
+                      <img src="/img/cam_lab.png" width="30" height="30"/>
+                      <strong>C</strong>onnected &
+                      <strong>A</strong>utomated
+                      <strong>M</strong>obility Lab
+                    </div>
+                  </a>
+              </div>
+              <!-- <ThemeToggle /> -->
+            </nav>
+          </div>
         </div>
-      </a>
-      <div class="navbar-content">
-          <ul>
-            <li><a href="index.html" id="aboutLink">About</a></li>
-            <li>
-              <a href="semi_real_time.html" id="realTimeLink">Real-Time Data</a>
-            </li>
-            <li>
-              <a href="historical.html" id="historicalDataLink">Historical Data</a>
-            </li>
-          </ul>
-      </div>
-      <!-- Divider between navbar and map -->
-      <div class="divider"></div>
-    </nav>
-
-    <div id="map"></div>
-
-    <!-- Date Container -->
-    <div class="date-container">
-      <div class="dateForRealTime" id="currentDate"></div>
-      <!-- You can add more date elements here if needed -->
+      </header>
+      <main class="flex-auto">
+        <section class="container grid items-center gap-6 pb-8 pt-6 md:py-10">
+          <div id="map"></div>
+          <!-- Date Container -->
+          <div class="date-container">
+            <div class="dateForRealTime" id="currentDate"></div>
+            <!-- You can add more date elements here if needed -->
+          </div>
+        </section>
+      </main>
     </div>
-
     <script>
       mapboxgl.accessToken =
         "pk.eyJ1Ijoiam00NjQ2IiwiYSI6ImNscTYyMzRhNDByYTEyam9oOWw3OXhmc3kifQ.MtsHFT_LpuS0mwGzqing1g";

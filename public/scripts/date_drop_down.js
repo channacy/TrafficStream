@@ -563,8 +563,7 @@ function updateChartData(slotIndex) {
     sliderLabel.textContent =
     window.selected_month + "/" + window.selected_date +
       "/" +
-      window.selected_year +
-      " Time of Day!: " +
+      window.selected_year + " "
       window.geojsonFiles[slotIndex].replace(/-/g, ":");
     }
 
@@ -572,10 +571,9 @@ function updateChartData(slotIndex) {
       var sliderLabel = document.getElementById("time-slider-label"); // Get the time-slider-label element
       if (sliderLabel) {
         sliderLabel.innerHTML =
-          '<h2>' + window.selected_month + "/" +
-          window.selected_date + "/" +
-          window.selected_year +
-          ' Time of Day: ' +
+          '<h2 style="display: inline-block">' + window.selected_month + "/" +
+          window.selected_date + "/" + 
+          window.selected_year + "\t" +
           window.geojsonFiles[slotIndex].replace(/-/g, ":") +
           '</h2>';
       }

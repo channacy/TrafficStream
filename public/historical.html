@@ -19,7 +19,7 @@
       <header
         class="sticky top-0 z-50 w-4/6 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div
-          class="container flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0">
+          class="flex h-16 items-center sm:justify-between">
           <div class="flex gap-6 md:gap-10 m-4">
             <a href="/" class="flex items-center space-x-2">
               <span class="inline-block font-bold">Home</span>
@@ -31,8 +31,7 @@
               <span class="inline-block">Historical</span>
             </a>
           </div>
-          <div class="flex items-center justify-end space-x-4">
-            <nav class="flex items-center space-x-1">
+          <div class="flex md:gap-10 m-4">
               <div class="logo flex">
                 <a
                   href="https://research.coe.drexel.edu/caee/camlab/index.html"
@@ -40,7 +39,7 @@
                   rel="noreferrer"
                   class={buttonVariants({ variant: 'ghost' })}
                   >
-                    <div class="lab-name flex flex-end space-x-1">
+                    <div class="lab-name flex flex-end">
                       <img src="/img/cam_lab.png" width="30" height="30"/>
                       <strong>C</strong>onnected &
                       <strong>A</strong>utomated
@@ -48,8 +47,6 @@
                     </div>
                   </a>
               </div>
-              <!-- <ThemeToggle /> -->
-            </nav>
           </div>
         </div>
       </header>

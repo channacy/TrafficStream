@@ -6,42 +6,39 @@
   <body class="min-h-screen bg-background font-sans antialiased m-4">
     <div class="relative flex min-h-screen flex-col">
       <header
-        class="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div
-          class="container flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0">
-          <div class="flex gap-6 md:gap-10">
-            <a href="/" class="flex items-center space-x-2">
-              <span class="inline-block font-bold">Home</span>
-            </a>
-            <a href="semi_real_time.html" class="flex items-center space-x-2">
-              <span class="inline-block">Real-Time Data</span>
-            </a>
-            <a href="historical.html" class="flex items-center space-x-2">
-              <span class="inline-block">Historical</span>
-            </a>
-          </div>
-          <div class="flex items-center justify-end space-x-4">
-            <nav class="flex items-center space-x-1">
-              <div class="logo flex">
-                <a
-                  href="https://research.coe.drexel.edu/caee/camlab/index.html"
-                  target="_blank"
-                  rel="noreferrer"
-                  class={buttonVariants({ variant: 'ghost' })}
-                  >
-                    <div class="lab-name flex items-center space-x-1">
-                      <img src="/img/cam_lab.png" width="30" height="30"/>
-                      <strong>C</strong>onnected &
-                      <strong>A</strong>utomated
-                      <strong>M</strong>obility Lab
-                    </div>
-                  </a>
-              </div>
-              <!-- <ThemeToggle /> -->
-            </nav>
-          </div>
+      class="sticky top-0 z-50 w-4/6 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div
+        class="flex h-16 items-center sm:justify-between">
+        <div class="flex gap-6 md:gap-10 m-4">
+          <a href="/" class="flex items-center space-x-2">
+            <span class="inline-block font-bold">Home</span>
+          </a>
+          <a href="semi_real_time.html" class="flex items-center space-x-2">
+            <span class="inline-block">Real-Time Data</span>
+          </a>
+          <a href="historical.html" class="flex items-center space-x-2">
+            <span class="inline-block">Historical</span>
+          </a>
         </div>
-      </header>
+        <div class="flex md:gap-10 m-4">
+            <div class="logo flex">
+              <a
+                href="https://research.coe.drexel.edu/caee/camlab/index.html"
+                target="_blank"
+                rel="noreferrer"
+                class={buttonVariants({ variant: 'ghost' })}
+                >
+                  <div class="lab-name flex flex-end">
+                    <img src="/img/cam_lab.png" width="30" height="30"/>
+                    <strong>C</strong>onnected &
+                    <strong>A</strong>utomated
+                    <strong>M</strong>obility Lab
+                  </div>
+                </a>
+            </div>
+        </div>
+      </div>
+    </header>
       <main class="flex-auto">
         <section class="container grid items-center gap-6 pb-8 pt-6 md:py-10">
           <div class="flex max-w-[980px] flex-col items-start gap-2">
